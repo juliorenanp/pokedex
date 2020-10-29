@@ -12,4 +12,11 @@ export class PokemonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  recuperarFoto() {
+    // TODO  get pokemon pictures on https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png passing {{number}}
+    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png';
+  }
+
+  // foto: string = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png';
+  
 }
