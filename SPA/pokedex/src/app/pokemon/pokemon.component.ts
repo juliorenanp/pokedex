@@ -7,16 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonComponent implements OnInit {
 
-  constructor() { }
+  nomePokemon: string;
+  tipoPokemon: string;
+  descricaoPokemon: string;
+
+  constructor() {
+    this.nomePokemon = 'Suicune - スイクン';
+    this.tipoPokemon = 'Water';
+    this.descricaoPokemon = 'Pokemon Baum';
+  }
 
   ngOnInit(): void {
   }
 
   recuperarFoto() {
-    // TODO  get pokemon pictures on https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png passing {{number}}
-    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png';
+    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/245.png';
   }
 
-  // foto: string = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png';
-  
+  recuperarTexto() {
+    return 'Ditto é um pokemon baum.'
+  }
+
 }
