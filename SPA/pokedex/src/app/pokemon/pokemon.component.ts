@@ -21,11 +21,11 @@ export class PokemonComponent implements OnInit {
   }
 
   recuperarFoto() {
-    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/245.png';
+    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/243.png';
   }
 
   recuperarSprite(){
-    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/245.png';
+    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/243.png';
   }
 
 
