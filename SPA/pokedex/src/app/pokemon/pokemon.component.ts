@@ -12,6 +12,7 @@ export class PokemonComponent implements OnInit {
   descricaoPokemon: string;
 
   constructor() {
+    //whats the best way to get name of pokemon?
     this.nomePokemon = 'Suicune - スイクン';
     this.tipoPokemon = 'Water';
     this.descricaoPokemon = 'Pokemon Baum';
@@ -21,11 +22,11 @@ export class PokemonComponent implements OnInit {
   }
 
   recuperarFoto() {
-    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/243.png';
+    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/245.png';
   }
 
   recuperarSprite(){
-    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/243.png';
+    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/245.png';
   }
 
 
