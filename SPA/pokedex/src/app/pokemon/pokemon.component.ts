@@ -16,7 +16,7 @@ export class PokemonComponent implements OnInit {
   // is this the best way to get pokemons?
     this.nomePokemon = 'Suicune - スイクン';
     this.tipoPokemon = 'Water';
-    this.descricaoPokemon = 'Pokemon Baum';
+    this.descricaoPokemon = this.recuperarTexto();
   }
 
   ngOnInit(): void {
@@ -32,7 +32,7 @@ export class PokemonComponent implements OnInit {
 
 
   recuperarTexto() {
-    return 'Ditto é um pokemon baum.'
+    return 'SUICUNE embodies the compassion of a pure spring of water. It runs across the land with gracefulness. This POKéMON has the power to purify dirty water.'
   }
 
 }

@@ -1,18 +1,21 @@
 <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
+      <!-- <img mat-card-sm-image [src]="recuperarFoto()"> -->
       <mat-card-title>{{nomePokemon}}</mat-card-title>
-      <mat-card-subtitle>subTitle</mat-card-subtitle>
+      <mat-card-subtitle>
+        <mat-chip-list aria-label="Pokemon types">
+          <mat-chip color="watter-chip" selected>{{tipoPokemon}}</mat-chip>
+        </mat-chip-list>
+      </mat-card-subtitle>
     </mat-card-header>
-    <div style="background: white;">
+    <div>
         <img mat-card-image [src]="recuperarFoto()" alt="Photo of a Shiba Inu">
     </div>
     
     <mat-card-content>
     
-      <mat-chip-list aria-label="Pokemon types">
-        <mat-chip color="watter-chip" selected>{{tipoPokemon}}</mat-chip>
-      </mat-chip-list>
+     
 
       <p>
         {{descricaoPokemon}}
@@ -20,13 +23,11 @@
 
     </mat-card-content>
     <mat-card-actions>
-      <!-- <button mat-raised-button color="primary">Próximo</button> -->
       
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-        <!-- <mat-icon>fact_check</mat-icon> -->
+      <button mat-icon-button [matMenuTriggerFor]="aboveMenu">
         <mat-icon>videogame_asset</mat-icon>
       </button>
-      <mat-menu #menu="matMenu">
+      <mat-menu #aboveMenu="matMenu" yPosition="above">
         <button mat-menu-item>
           <mat-icon>forward</mat-icon>
           <span>Next Pokemon</span>
