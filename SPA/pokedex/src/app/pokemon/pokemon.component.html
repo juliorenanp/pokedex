@@ -5,7 +5,9 @@
       <mat-card-title>{{nomePokemon}}</mat-card-title>
       <mat-card-subtitle>
         <mat-chip-list aria-label="Pokemon types">
-          <mat-chip color="watter-chip" selected>{{tipoPokemon}}</mat-chip>
+
+          <mat-chip  selected>{{tipoPokemon}}</mat-chip>
+
         </mat-chip-list>
       </mat-card-subtitle>
     </mat-card-header>
@@ -24,7 +26,7 @@
     </mat-card-content>
     <mat-card-actions>
       
-      <button mat-icon-button [matMenuTriggerFor]="aboveMenu">
+      <button mat-icon-button [matMenuTriggerFor]="aboveMenu" matTooltip="Menu"  [matTooltipPosition]="'right'" matTooltipHideDelay="1000">
         <mat-icon>videogame_asset</mat-icon>
       </button>
       <mat-menu #aboveMenu="matMenu" yPosition="above">

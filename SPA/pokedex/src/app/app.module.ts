@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,7 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     MatButtonModule,
     MatChipsModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
