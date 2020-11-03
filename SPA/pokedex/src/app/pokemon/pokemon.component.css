@@ -7,4 +7,9 @@
     background-size: cover;
   }
 
- 
+
+  /* How to pass color as parameter? */
+ .mat-chip.mat-standard-chip {
+  background-color: lightskyblue;
+  color: #fff;
+}

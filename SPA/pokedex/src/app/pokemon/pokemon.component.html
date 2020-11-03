@@ -2,16 +2,22 @@
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{nomePokemon}}</mat-card-title>
-      <mat-card-subtitle>{{tipoPokemon}}</mat-card-subtitle>
+      <mat-card-subtitle>subTitle</mat-card-subtitle>
     </mat-card-header>
     <div style="background: white;">
         <img mat-card-image [src]="recuperarFoto()" alt="Photo of a Shiba Inu">
     </div>
     
     <mat-card-content>
+    
+      <mat-chip-list aria-label="Pokemon types">
+        <mat-chip color="watter-chip" selected>{{tipoPokemon}}</mat-chip>
+      </mat-chip-list>
+
       <p>
-       {{descricaoPokemon}}
+        {{descricaoPokemon}}
       </p>
+
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary">Próximo</button>
