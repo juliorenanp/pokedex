@@ -7,16 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonComponent implements OnInit {
 
-
-  nomePokemon: string;
-  tipoPokemon: string;
-  descricaoPokemon: string;
+  pokemonNumber: number;
+  pokemonName: string;
+  pokemonType: string;
+  pokemonDescription: string;
 
   constructor() {
-  // is this the best way to get pokemons?
-    this.nomePokemon = 'Suicune - スイクン';
-    this.tipoPokemon = 'Water';
-    this.descricaoPokemon = this.recuperarTexto();
+    this.pokemonName = 'Suicune';
+    this.pokemonType = 'Water';
+    this.pokemonDescription = this.recuperarTexto();
+    this.pokemonNumber = 250;
   }
 
   ngOnInit(): void {
@@ -29,7 +29,6 @@ export class PokemonComponent implements OnInit {
   recuperarSprite(){
      return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/245.png';
   }
-
 
   recuperarTexto() {
     return 'SUICUNE embodies the compassion of a pure spring of water. It runs across the land with gracefulness. This POKéMON has the power to purify dirty water.'

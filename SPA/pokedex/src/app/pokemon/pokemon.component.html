@@ -1,51 +1,48 @@
 <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <!-- <img mat-card-sm-image [src]="recuperarFoto()"> -->
-      <mat-card-title>{{nomePokemon}}</mat-card-title>
-      <mat-card-subtitle>
-        <mat-chip-list aria-label="Pokemon types">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <!-- <img mat-card-sm-image [src]="recuperarFoto()"> -->
+    <mat-card-title>{{pokemonName}} <a style="color: grey"> Nº{{pokemonNumber}}</a>
+    </mat-card-title>
+    <mat-card-subtitle>
 
-          <mat-chip  selected>{{tipoPokemon}}</mat-chip>
-
-        </mat-chip-list>
-      </mat-card-subtitle>
-    </mat-card-header>
-    <div>
-        <img mat-card-image [src]="recuperarFoto()" alt="Photo of a Shiba Inu">
-    </div>
-    
-    <mat-card-content>
-    
-     
-
-      <p>
-        {{descricaoPokemon}}
-      </p>
-
-    </mat-card-content>
-    <mat-card-actions>
+      <mat-chip-list aria-label="Pokemon types">
+        <mat-chip selected>{{pokemonType}}</mat-chip>
+      </mat-chip-list>
       
-      <button mat-icon-button [matMenuTriggerFor]="aboveMenu" matTooltip="Menu"  [matTooltipPosition]="'right'" matTooltipHideDelay="1000">
-        <mat-icon>videogame_asset</mat-icon>
-      </button>
-      <mat-menu #aboveMenu="matMenu" yPosition="above">
-        <button mat-menu-item>
-          <mat-icon>forward</mat-icon>
-          <span>Next Pokemon</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>sports_esports</mat-icon>
-          <span>Search by number</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>search</mat-icon>
-          <span>Search by name</span>
-        </button>
-      </mat-menu>
-
-
-    </mat-card-actions>
-  </mat-card>
-
+    </mat-card-subtitle>
+  </mat-card-header>
   
+  <div>
+    <img mat-card-image [src]="recuperarFoto()" alt="Photo of a Shiba Inu">
+  </div>
+
+  <mat-card-content>
+    <p>
+      {{pokemonDescription}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+
+    <button mat-icon-button [matMenuTriggerFor]="aboveMenu" matTooltip="Menu" [matTooltipPosition]="'right'"
+      matTooltipHideDelay="1000">
+      <mat-icon>videogame_asset</mat-icon>
+    </button>
+    <mat-menu #aboveMenu="matMenu" yPosition="above">
+      <button mat-menu-item>
+        <mat-icon>forward</mat-icon>
+        <span>Next Pokemon</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>sports_esports</mat-icon>
+        <span>Search by number</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>search</mat-icon>
+        <span>Search by name</span>
+      </button>
+    </mat-menu>
+
+
+  </mat-card-actions>
+</mat-card>
