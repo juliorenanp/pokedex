@@ -20,8 +20,28 @@
 
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary">Próximo</button>
-      <!-- <button mat-raised-button color="accent">Accent</button> -->
+      <!-- <button mat-raised-button color="primary">Próximo</button> -->
+      
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <!-- <mat-icon>fact_check</mat-icon> -->
+        <mat-icon>videogame_asset</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>forward</mat-icon>
+          <span>Next Pokemon</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>sports_esports</mat-icon>
+          <span>Search by number</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>search</mat-icon>
+          <span>Search by name</span>
+        </button>
+      </mat-menu>
+
+
     </mat-card-actions>
   </mat-card>
 
