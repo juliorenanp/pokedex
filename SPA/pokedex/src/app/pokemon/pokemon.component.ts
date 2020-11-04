@@ -34,4 +34,11 @@ export class PokemonComponent implements OnInit {
     return 'SUICUNE embodies the compassion of a pure spring of water. It runs across the land with gracefulness. This POKéMON has the power to purify dirty water.'
   }
 
+
+  // https://pokeapi.co/api/v2/pokemon/245/
+  // id: pokemonNumber
+  // name: pokemonName
+
+  //https://pokeapi.co/api/v2/pokemon-species/245/
+  // flavor_text_entries[0] : pokemonDescription 
 }
