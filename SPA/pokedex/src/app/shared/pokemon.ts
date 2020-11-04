@@ -1,6 +1,8 @@
-export interface Pokemon{
-    pokemonNumber: number;
-    pokemonName: string;
-    pokemonType: string;
-    pokemonDescription: string;
+export class Pokemon{
+    constructor(
+    pokemonNumber: number,
+    pokemonName: string,
+    pokemonType: string,
+    pokemonDescription: string
+    ){}    
 }
