@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // API: 'https://pokeapi.co/api/v2/',
+  // API: 'https://cors-anywhere.herokuapp.com/http://pokeapi.co/api/v2/pokemon/245/',
+  API: 'https://cors-anywhere.herokuapp.com/http://pokeapi.co/api/v2/pokemon',
 };
 
 /*
@@ -14,3 +17,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+

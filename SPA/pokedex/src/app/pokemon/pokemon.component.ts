@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PokemonService} from '../pokemon.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -12,7 +13,8 @@ export class PokemonComponent implements OnInit {
   pokemonType: string;
   pokemonDescription: string;
 
-  constructor() {
+  constructor(private service: PokemonService) {
+
     this.pokemonName = 'Suicune';
     this.pokemonType = 'Water';
     this.pokemonDescription = this.recuperarTexto();
@@ -20,6 +22,10 @@ export class PokemonComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
+    console.log(this.service.first());
+
+
   }
 
   recuperarFoto() {
