@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Pokemon } from './shared/pokemon';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,9 @@ export class PokemonService {
 
   first(){
     let number = 245;
+    let test = this.firstPokemon();
+
+    console.log(test);
 
     this.http.get<any>(`${this.API}/${number}/`).subscribe(data => this.pokemon = { 
       pokemonDescription: data.name,
@@ -25,20 +29,16 @@ export class PokemonService {
       pokemonType: data.name    
     });
 
-    console.log(this.pokemon);
-
-
-
     // this work
     //var test = this.http.get<any>(`${this.API}/${number}/`).subscribe(data => console.log(data.name));
     //this.http.get<any>(`${this.API}`).subscribe(data => console.log(data));
 
-    
-    // console.log(teste);
-    
-    console.log('chamou');
+  }
 
-   // return this.http.get<Pokemon>(`${this.API}/${number}`).pipe();
+
+  firstPokemon(): Observable<any>{
+    const url = 'https://cors-anywhere.herokuapp.com/http://pokeapi.co/api/v2/pokemon/245/'
+    return this.http.get(url);
   }
 
 }
