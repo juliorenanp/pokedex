@@ -37,9 +37,8 @@ export class PokemonComponent implements OnInit {
   }
 
   getNextPokemon(){
-    let pokNumber = this.pokemonNumber + 1;
-    this.getPokemon(pokNumber)
-
+    let pokNumber =++ this.pokemonNumber;
+    this.getPokemon(pokNumber);
   }
 
   getMainPicture(id: number) {
@@ -78,7 +77,6 @@ export class PokemonComponent implements OnInit {
         }
       }
     );
-
   }
 
 }

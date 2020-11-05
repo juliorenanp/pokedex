@@ -4,12 +4,12 @@
     </div>
     
     <!-- <img mat-card-sm-image [src]="recuperarFoto()"> -->
-    <mat-card-title>{{pokemonName}} <a style="color: grey"> Nº{{pokemonNumber}}</a>
+    <mat-card-title>{{pokemonName | uppercase }} <a style="color: grey"> Nº{{pokemonNumber}}</a>
     </mat-card-title>
     <mat-card-subtitle>
 
       <mat-chip-list aria-label="Pokemon types">
-        <mat-chip selected>{{pokemonType}}</mat-chip>
+        <mat-chip selected>{{pokemonType | uppercase}}</mat-chip>
       </mat-chip-list>
 
     </mat-card-subtitle>
@@ -31,9 +31,9 @@
       <mat-icon>videogame_asset</mat-icon>
     </button>
     <mat-menu #aboveMenu="matMenu" yPosition="above">
-      <button mat-menu-item>
+      <button mat-menu-item (click)="getNextPokemon()">
         <mat-icon>forward</mat-icon>
-        <span (click)="getNextPokemon()">Next Pokemon</span>
+        <span >Next Pokemon</span>
       </button>
       <button mat-menu-item>
         <mat-icon>sports_esports</mat-icon>
