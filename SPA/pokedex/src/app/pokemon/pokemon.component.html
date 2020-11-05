@@ -1,6 +1,9 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
+    <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url(' + pokemonUrl + ')'}">
+    </div>
+    
+    
     <!-- <img mat-card-sm-image [src]="recuperarFoto()"> -->
     <mat-card-title>{{pokemonName}} <a style="color: grey"> Nº{{pokemonNumber}}</a>
     </mat-card-title>
@@ -14,7 +17,7 @@
   </mat-card-header>
   
   <div>
-    <img mat-card-image [src]="recuperarFoto()">
+    <img mat-card-image [src]="pokemonPhoto">
   </div>
 
   <mat-card-content>

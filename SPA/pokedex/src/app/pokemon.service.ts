@@ -36,17 +36,17 @@ export class PokemonService {
 
   //  return (this.http.get<any>(`${this.API}`).pipe(take(1)));
 
-   this.http.get<any>(`${this.API}`).subscribe(
-        (data) => {
-          if(data){
-            this.eva01 = data;
-            console.log(this.eva01);
-          }
-        }
-      );
-
-      return this.eva01;
+  // return this.http.get<Object>(`${this.API}`).subscribe(
+  //       (data) => {
+  //         if(data){
+  //           this.eva01 = data;
+  //           // console.log(this.eva01);
+  //         }
+  //       }
+  //     );
       
+  return this.http.get<object>(`${this.API}`).pipe(delay(1000), tap(console.log));
+
   }
 
 

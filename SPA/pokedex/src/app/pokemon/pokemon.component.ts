@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { tap, delay, take } from 'rxjs/operators';
 import { map } from "rxjs/operators";
+import { Pokemon } from '../shared/pokemon';
 
 @Component({
   selector: 'app-pokemon',
@@ -19,40 +20,44 @@ export class PokemonComponent implements OnInit {
   pokemonName: string;
   pokemonType: string;
   pokemonDescription: string;
-  ronaldo: any;
-
+  pokemonPhoto: string;
+  pokemonUrl: string;
+ 
   constructor(private service: PokemonService, private http:HttpClient) {
-
-    this.pokemonName = 'Suicune';
-    this.pokemonType = 'Water';
-    this.pokemonDescription = this.recuperarTexto();
-    this.pokemonNumber = 250;
+    // this.pokemonName = 'Suicune';
+    // this.pokemonType = 'Water';
+    // this.pokemonDescription = this.recuperarTexto();
+    // this.pokemonNumber = 250;
   }
 
   ngOnInit(): void {
     
-    // Is this the wrong way?
+    // wrong way..
     this.http.get<any>(`${this.API}`).subscribe(
       (data) => {
-        if(data){
-          this.ronaldo = data;
-          console.log(this.ronaldo);
+        if(data){          
+          this.pokemonName = data.name;
+          this.pokemonType = data.id;
+          this.pokemonDescription = data.name;
+          this.pokemonNumber = data.id;
+          this.pokemonPhoto = this.recuperarFoto(data.id);
+          this.pokemonUrl = this.recuperarSprite(data.id);
         }
       }
     );
 
 
-  // this.ronaldo =  this.service.first();
-  //  console.log(this.ronaldo);
+   //this.ronaldo2 =  this.service.first().subscribe();
+  
 
   }
 
-  recuperarFoto() {
-     return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/245.png';
+  recuperarFoto(id: number = 245) {
+     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
   }
 
-  recuperarSprite(){
-     return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/245.png';
+  recuperarSprite(id: number = 245){
+     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
   }
 
   recuperarTexto() {
