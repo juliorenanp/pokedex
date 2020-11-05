@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {PokemonService} from '../pokemon.service';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { tap, delay, take } from 'rxjs/operators';
+import { map } from "rxjs/operators";
 
 @Component({
   selector: 'app-pokemon',
@@ -8,12 +13,15 @@ import {PokemonService} from '../pokemon.service';
 })
 export class PokemonComponent implements OnInit {
 
+  private readonly API = `${environment.API}`;
+
   pokemonNumber: number;
   pokemonName: string;
   pokemonType: string;
   pokemonDescription: string;
+  ronaldo: any;
 
-  constructor(private service: PokemonService) {
+  constructor(private service: PokemonService, private http:HttpClient) {
 
     this.pokemonName = 'Suicune';
     this.pokemonType = 'Water';
@@ -23,8 +31,19 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.service.first();
-     
+    // Is this the wrong way?
+    this.http.get<any>(`${this.API}`).subscribe(
+      (data) => {
+        if(data){
+          this.ronaldo = data;
+          console.log(this.ronaldo);
+        }
+      }
+    );
+
+
+  // this.ronaldo =  this.service.first();
+  //  console.log(this.ronaldo);
 
   }
 

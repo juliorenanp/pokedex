@@ -33,21 +33,19 @@ export class PokemonService {
     // this work
     //var test = this.http.get<any>(`${this.API}/${number}/`).subscribe(data => console.log(data.name));
      
-    return this.http.get<any>(`${this.API}`).subscribe(data => console.log(data));
-  
 
   //  return (this.http.get<any>(`${this.API}`).pipe(take(1)));
 
+   this.http.get<any>(`${this.API}`).subscribe(
+        (data) => {
+          if(data){
+            this.eva01 = data;
+            console.log(this.eva01);
+          }
+        }
+      );
 
-  //  return this.http.get<any>(`${this.API}`).subscribe(
-  //       (data) => {
-  //         if(data){
-  //           this.eva01 = data;
-  //           console.log(this.eva01);
-  //         }
-  //       }
-  //     );
-
+      return this.eva01;
       
   }
 
