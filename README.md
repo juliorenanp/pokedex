@@ -1,7 +1,7 @@
 
 ## Angular Pokedex
 
-This is my first Angular pokedex! (●'◡'●)
+This is my first Angular pokedex! ❤‼
 
 <img src="https://github.com/juliorenanp/pokedex/blob/main/IMG/cap.png" />
 
