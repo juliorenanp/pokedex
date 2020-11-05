@@ -31,9 +31,10 @@ export class PokemonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    let number = Math.floor(Math.random() * 800);     
+
     // wrong way..
-    this.http.get<any>(`${this.API}`).subscribe(
+    this.http.get<any>(`${this.API}/${number}`).subscribe(
       (data) => {
         if(data){          
           this.pokemonName = data.name;
@@ -46,10 +47,8 @@ export class PokemonComponent implements OnInit {
       }
     );
 
-
-   //this.ronaldo2 =  this.service.first().subscribe();
+   //this.test =  this.service.first().subscribe();
   
-
   }
 
   recuperarFoto(id: number = 245) {
@@ -64,6 +63,10 @@ export class PokemonComponent implements OnInit {
     return 'SUICUNE embodies the compassion of a pure spring of water. It runs across the land with gracefulness. This POKéMON has the power to purify dirty water.'
   }
 
+  //TO-DO
+  getType(id: number){
+    return `https://pokeapi.co/api/v2/pokemon-species/${id}/`
+  }
 
   // https://pokeapi.co/api/v2/pokemon/245/
   // id: pokemonNumber
