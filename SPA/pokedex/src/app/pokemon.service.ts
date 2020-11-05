@@ -49,7 +49,6 @@ export class PokemonService {
 
   }
 
-
   firstPokemon(): Observable<Pokemon[]>{
     const url = 'https://cors-anywhere.herokuapp.com/http://pokeapi.co/api/v2/pokemon/245/'
     return this.http

@@ -3,7 +3,6 @@
     <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url(' + pokemonUrl + ')'}">
     </div>
     
-    
     <!-- <img mat-card-sm-image [src]="recuperarFoto()"> -->
     <mat-card-title>{{pokemonName}} <a style="color: grey"> Nº{{pokemonNumber}}</a>
     </mat-card-title>
@@ -34,7 +33,7 @@
     <mat-menu #aboveMenu="matMenu" yPosition="above">
       <button mat-menu-item>
         <mat-icon>forward</mat-icon>
-        <span>Next Pokemon</span>
+        <span (click)="getNextPokemon()">Next Pokemon</span>
       </button>
       <button mat-menu-item>
         <mat-icon>sports_esports</mat-icon>

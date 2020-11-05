@@ -3,7 +3,6 @@
   }
   
   .example-header-image {
-    /* background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/245.png'); */
     background-size: cover;
     background-color: white;
   }
@@ -13,3 +12,5 @@
   background-color: lightskyblue !important;
   color: #fff;
 }
+
+/* #bdae58; */
