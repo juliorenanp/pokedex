@@ -23,8 +23,8 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit(): void {
     
-    console.log(this.service.first());
-
+    this.service.first();
+     
 
   }
 

@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   // API: 'https://pokeapi.co/api/v2/',
-  // API: 'https://cors-anywhere.herokuapp.com/http://pokeapi.co/api/v2/pokemon/245/',
-  API: 'https://cors-anywhere.herokuapp.com/http://pokeapi.co/api/v2/pokemon',
+  API: 'https://cors-anywhere.herokuapp.com/http://pokeapi.co/api/v2/pokemon/245/',
+  // API: 'https://cors-anywhere.herokuapp.com/http://pokeapi.co/api/v2/pokemon',
 };
 
 /*

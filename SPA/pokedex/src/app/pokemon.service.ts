@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Pokemon } from './shared/pokemon';
 import { Observable } from 'rxjs';
+import { tap, delay, take } from 'rxjs/operators';
 import { map } from "rxjs/operators";
 
 @Injectable({
@@ -14,15 +15,13 @@ export class PokemonService {
   private readonly API = `${environment.API}`;
 
   pokemon: Pokemon;
+  eva01: any;
 
   constructor(private http:HttpClient) { }
 
   first(){
     let number = 245;
-    debugger;
     let test = this.firstPokemon();
-
-    console.log(test);
 
     // this.http.get<any>(`${this.API}/${number}/`).subscribe(data => this.pokemon = { 
     //   pokemonDescription: data.name,
@@ -33,8 +32,23 @@ export class PokemonService {
 
     // this work
     //var test = this.http.get<any>(`${this.API}/${number}/`).subscribe(data => console.log(data.name));
-    //this.http.get<any>(`${this.API}`).subscribe(data => console.log(data));
+     
+    return this.http.get<any>(`${this.API}`).subscribe(data => console.log(data));
+  
 
+  //  return (this.http.get<any>(`${this.API}`).pipe(take(1)));
+
+
+  //  return this.http.get<any>(`${this.API}`).subscribe(
+  //       (data) => {
+  //         if(data){
+  //           this.eva01 = data;
+  //           console.log(this.eva01);
+  //         }
+  //       }
+  //     );
+
+      
   }
 
 
