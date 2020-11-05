@@ -1,5 +1,6 @@
 
 ## Angular Pokedex
+<img src="https://img.shields.io/github/last-commit/juliorenanp/pokedex" />
 
 This is my first Angular pokedex! ❤⚠🎉🎊
 
