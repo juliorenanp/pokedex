@@ -32,7 +32,7 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit(): void {
     let number = Math.floor(Math.random() * 800);     
-
+    number = 245;
     // wrong way..
     this.http.get<any>(`${this.API}/${number}`).subscribe(
       (data) => {
@@ -61,9 +61,8 @@ export class PokemonComponent implements OnInit {
 
   recuperarTexto() {
     return 'SUICUNE embodies the compassion of a pure spring of water. It runs across the land with gracefulness. This POKéMON has the power to purify dirty water.'
-  }
+  } 
 
-  //TO-DO
   getType(id: number){
     return `https://pokeapi.co/api/v2/pokemon-species/${id}/`
   }
