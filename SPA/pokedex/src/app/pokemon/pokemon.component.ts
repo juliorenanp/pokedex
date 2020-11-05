@@ -32,13 +32,14 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit(): void {
     let number = Math.floor(Math.random() * 800);     
-    number = 245;
+   
     // wrong way..
-    this.http.get<any>(`${this.API}/${number}`).subscribe(
+    this.http.get<any>(`${this.API}/pokemon/${number}`).subscribe(
       (data) => {
         if(data){          
           this.pokemonName = data.name;
-          this.pokemonType = data.id;
+          // need to ng-for types;
+          this.pokemonType = data.types[0].type.name;
           this.pokemonDescription = data.name;
           this.pokemonNumber = data.id;
           this.pokemonPhoto = this.recuperarFoto(data.id);
@@ -46,6 +47,18 @@ export class PokemonComponent implements OnInit {
         }
       }
     );
+
+
+    this.http.get<any>(`${this.API}/pokemon-species/${number}`).subscribe(
+      (data) => {
+        if(data){          
+        
+          this.pokemonDescription = data.flavor_text_entries[0].flavor_text;
+          
+        }
+      }
+    );
+
 
    //this.test =  this.service.first().subscribe();
   
