@@ -68,8 +68,7 @@ export class PokemonComponent implements OnInit {
         if (data) {
           this.pokemonName = data.name;
           // need to ng-for types;
-          this.pokemonType = data.types[0].type.name;
-          this.pokemonDescription = data.name;
+          this.pokemonType = data.types[0].type.name;          
           this.pokemonNumber = data.id;
           this.pokemonPhoto = this.getMainPicture(data.id);
           this.pokemonUrl = this.getSprite(data.id);
