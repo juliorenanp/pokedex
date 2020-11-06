@@ -9,7 +9,7 @@
 
   /* How to pass color as parameter? */
  .mat-chip.mat-standard-chip {
-  background-color: lightskyblue !important;
+  background-color: black !important;
   color: #fff;
 }
 
