@@ -3,7 +3,7 @@
   } */
 
   .example-card {
-    max-width: 217px;
+    max-width: 190px;
   }
   
   .example-header-image {
@@ -32,5 +32,10 @@
 }
 
 .mat-card-content{
-  max-height: 65px;
+  max-height: 83px;
+}
+
+.mat-card{
+  background-color: #bdae58;
+
 }
