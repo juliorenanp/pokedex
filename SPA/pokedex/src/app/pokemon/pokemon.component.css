@@ -1,5 +1,9 @@
-.example-card {
+/* .example-card {
     max-width: 400px;
+  } */
+
+  .example-card {
+    max-width: 217px;
   }
   
   .example-header-image {
@@ -7,10 +11,26 @@
     background-color: white;
   }
 
-  
  .mat-chip.mat-standard-chip {
   background-color: black !important;
   color: #fff;
 }
 
+.mat-card-header .mat-card-title {
+  margin-bottom: 0px;
+  font-size: 15px;
+}
+
+.mat-card-actions, .mat-card-subtitle, .mat-card-content {
+  margin-bottom: 0px;
+}
 /* #bdae58; */
+.mat-card-image:first-child {
+  margin-top: -94px;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.mat-card-content{
+  max-height: 65px;
+}

@@ -28,19 +28,13 @@ export class PokemonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.getRandomPokemon();
-
     //this.test =  this.service.first().subscribe();
-
   }
 
   getRandomPokemon(){
-
     let number = Math.floor(Math.random() * 800);
-
     this.getPokemon(number);
-
   }
 
   getNextPokemon(){

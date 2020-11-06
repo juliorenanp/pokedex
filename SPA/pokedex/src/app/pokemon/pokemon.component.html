@@ -1,29 +1,31 @@
-<mat-card class="example-card">
+<mat-card class="example-card" id="eva">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url(' + pokemonUrl + ')'}">
     </div>
 
     <!-- <img mat-card-sm-image [src]="recuperarFoto()"> -->
-    <mat-card-title>{{pokemonName | uppercase }} <a style="color: grey"> Nº{{pokemonNumber}}</a>
-    </mat-card-title>
-    <mat-card-subtitle>
-
-      <mat-chip-list aria-label="Pokemon types">
+    <mat-card-title>
+      {{pokemonName | uppercase }} <a style="color: grey"> Nº{{pokemonNumber}} </a>
+      <!-- <mat-chip-list>
         <mat-chip selected>{{pokemonType | uppercase}}</mat-chip>
-      </mat-chip-list>
-
-    </mat-card-subtitle>
+      </mat-chip-list> -->
+    </mat-card-title>
+    <!-- <mat-card-subtitle>
+    </mat-card-subtitle> -->
   </mat-card-header>
 
-  <div>
-    <img mat-card-image [src]="pokemonPhoto">
-  </div>
 
   <mat-card-content>
+    <div style="transform: scale(0.5);">
+      <img mat-card-image [src]="pokemonPhoto">
+    </div>
+  </mat-card-content>
+  <!-- <mat-card-content>
     <p>
       {{pokemonDescription}}
     </p>
-  </mat-card-content>
+  </mat-card-content> -->
+
   <mat-card-actions>
     <button mat-icon-button [matMenuTriggerFor]="aboveMenu" matTooltip="Menu" [matTooltipPosition]="'right'"
       matTooltipHideDelay="1000">
