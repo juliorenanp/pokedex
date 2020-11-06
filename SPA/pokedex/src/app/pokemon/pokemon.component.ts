@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { tap, delay, take } from 'rxjs/operators';
 import { map } from "rxjs/operators";
 import { Pokemon } from '../shared/pokemon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pokemon',
@@ -23,16 +24,22 @@ export class PokemonComponent implements OnInit {
   pokemonPhoto: string;
   pokemonUrl: string;
 
-  constructor(private service: PokemonService, private http: HttpClient) {
+  constructor(private service: PokemonService, private http: HttpClient, public dialog:MatDialogModule) {
   }
 
   ngOnInit(): void {
 
+    this.getRandomPokemon();
+
+    //this.test =  this.service.first().subscribe();
+
+  }
+
+  getRandomPokemon(){
+
     let number = Math.floor(Math.random() * 800);
 
     this.getPokemon(number);
-
-    //this.test =  this.service.first().subscribe();
 
   }
 
