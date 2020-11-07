@@ -2,11 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
-import { tap, delay, take } from 'rxjs/operators';
-import { map } from "rxjs/operators";
-import { Pokemon } from '../shared/pokemon';
-import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pokemon',
@@ -24,7 +19,7 @@ export class PokemonComponent implements OnInit {
   pokemonPhoto: string;
   pokemonUrl: string;
 
-  constructor(private service: PokemonService, private http: HttpClient, public dialog:MatDialogModule) {
+  constructor(private service: PokemonService, private http: HttpClient) {
   }
 
   ngOnInit(): void {
@@ -33,7 +28,7 @@ export class PokemonComponent implements OnInit {
   }
 
   getRandomPokemon(){
-    let number = Math.floor(Math.random() * 800);
+    let number = Math.floor(Math.random() * 150);
     this.getPokemon(number);
   }
 
@@ -56,7 +51,6 @@ export class PokemonComponent implements OnInit {
 
   // TODO pass all this logic to Pokemon Service
   getPokemon(pokNumber: number) {
-
     this.http.get<any>(`${this.API}/pokemon/${pokNumber}`).subscribe(
       (data) => {
         if (data) {
@@ -78,5 +72,4 @@ export class PokemonComponent implements OnInit {
       }
     );
   }
-
 }
