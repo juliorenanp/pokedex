@@ -10,8 +10,6 @@ import { map } from "rxjs/operators";
   providedIn: 'root'
 })
 export class PokemonService {
-
-  // https://pokeapi.co/api/v2/pokemon/245/
   private readonly API = `${environment.API}`;
 
   pokemon: Pokemon;
