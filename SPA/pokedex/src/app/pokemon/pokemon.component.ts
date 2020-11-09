@@ -24,7 +24,7 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRandomPokemon();
-    //this.test =  this.service.first().subscribe();
+    //this.service.first(x => console.log(x.data)).subscribe();
   }
 
   getRandomPokemon(){
@@ -49,27 +49,38 @@ export class PokemonComponent implements OnInit {
     return `https://pokeapi.co/api/v2/pokemon-species/${id}/`
   }
 
-  // TODO pass all this logic to Pokemon Service
+  
   getPokemon(pokNumber: number) {
-    this.http.get<any>(`${this.API}/pokemon/${pokNumber}`).subscribe(
-      (data) => {
-        if (data) {
-          this.pokemonName = data.name;
-          // need to ng-for types;
-          this.pokemonType = data.types[0].type.name;          
-          this.pokemonNumber = data.id;
-          this.pokemonPhoto = this.getMainPicture(data.id);
-          this.pokemonUrl = this.getSprite(data.id);
-        }
-      }
-    );
 
-    this.http.get<any>(`${this.API}/pokemon-species/${pokNumber}`).subscribe(
-      (data) => {
-        if (data) {
-          this.pokemonDescription = data.flavor_text_entries[0].flavor_text;
-        }
-      }
-    );
+    this.service.getPokemon(pokNumber)
+                .subscribe((data: any)=> {
+                this.pokemonName = data.name;
+                this.pokemonType = data.types[0].type.name;          
+                this.pokemonNumber = data.id;
+                this.pokemonPhoto = this.getMainPicture(data.id);
+                this.pokemonUrl = this.getSprite(data.id);
+    });
+  
+
+    // this.http.get<any>(`${this.API}/pokemon/${pokNumber}`).subscribe(
+    //   (data) => {
+    //     if (data) {
+    //       this.pokemonName = data.name;
+    //       // need to ng-for types;
+    //       this.pokemonType = data.types[0].type.name;          
+    //       this.pokemonNumber = data.id;
+    //       this.pokemonPhoto = this.getMainPicture(data.id);
+    //       this.pokemonUrl = this.getSprite(data.id);
+    //     }
+    //   }
+    //);
+
+    // this.http.get<any>(`${this.API}/pokemon-species/${pokNumber}`).subscribe(
+    //   (data) => {
+    //     if (data) {
+    //       this.pokemonDescription = data.flavor_text_entries[0].flavor_text;
+    //     }
+    //   }
+    // );
   }
 }
