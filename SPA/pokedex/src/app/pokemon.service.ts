@@ -15,9 +15,9 @@ export class PokemonService {
   pokemon: Pokemon;
   eva01: any;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  first(){
+  first() {
     let number = 245;
     let test = this.firstPokemon();
 
@@ -30,34 +30,58 @@ export class PokemonService {
 
     // this work
     //var test = this.http.get<any>(`${this.API}/${number}/`).subscribe(data => console.log(data.name));
-     
 
-  //  return (this.http.get<any>(`${this.API}`).pipe(take(1)));
 
-  // return this.http.get<Object>(`${this.API}`).subscribe(
-  //       (data) => {
-  //         if(data){
-  //           this.eva01 = data;
-  //           // console.log(this.eva01);
-  //         }
-  //       }
-  //     );
-      
-  return this.http.get<object>(`${this.API}`).pipe(delay(1000), tap(console.log));
+    //  return (this.http.get<any>(`${this.API}`).pipe(take(1)));
+
+    // return this.http.get<Object>(`${this.API}`).subscribe(
+    //       (data) => {
+    //         if(data){
+    //           this.eva01 = data;
+    //           // console.log(this.eva01);
+    //         }
+    //       }
+    //     );
+
+    return this.http.get<object>(`${this.API}`).pipe(delay(1000), tap(console.log));
 
   }
 
-  firstPokemon(): Observable<Pokemon[]>{
+  firstPokemon(): Observable<Pokemon[]> {
     const url = 'https://cors-anywhere.herokuapp.com/http://pokeapi.co/api/v2/pokemon/245/'
     return this.http
-    .get(url)
-    .pipe(
-      map((data: any[]) =>
-        data.map(
-          (item: any) =>
-            new Pokemon(item.id, item.name, item.name, item.name)
+      .get(url)
+      .pipe(
+        map((data: any[]) =>
+          data.map(
+            (item: any) =>
+              new Pokemon(item.id, item.name, item.name, item.name)
+          )
         )
-      )
+      );
+  }
+
+  getPokemon(pokNumber: number) {
+
+    this.http.get<any>(`${this.API}/pokemon/${pokNumber}`).subscribe(
+      (data) => {
+        if (data) {
+
+
+        }
+      }
+    );
+
+  }
+
+  getPokemonDetails(pokNumber: number) {
+    this.http.get<any>(`${this.API}/pokemon-species/${pokNumber}`).subscribe(
+      (data) => {
+        if (data) {
+
+        }
+      }
     );
   }
+
 }
