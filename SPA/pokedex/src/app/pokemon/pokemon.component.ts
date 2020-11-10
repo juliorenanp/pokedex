@@ -27,7 +27,7 @@ export class PokemonComponent implements OnInit {
   }
 
   getRandomPokemon() {
-    let number = Math.floor(Math.random() * 900);
+    let number = Math.floor(Math.random() * 800);
     this.getPokemon(number);
   }
 
