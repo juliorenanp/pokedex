@@ -50,7 +50,6 @@ export class PokemonComponent implements OnInit {
 
 
   getPokemon(pokNumber: number) {
-
     this.service.getPokemon(pokNumber)
       .subscribe((data: any) => {
         this.pokemonName = data.name;
@@ -64,6 +63,6 @@ export class PokemonComponent implements OnInit {
       .subscribe((data: any) => {
         this.pokemonDescription = data.flavor_text_entries[0].flavor_text;
       });
-   
+
   }
 }

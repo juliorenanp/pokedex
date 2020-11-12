@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Pokemon } from './shared/pokemon';
 import { throwError } from 'rxjs';
-import { map, catchError  } from "rxjs/operators";
+import { map, catchError } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -26,13 +26,13 @@ export class PokemonService {
 
   getPokemonDetails(pokNumber: number) {
     return this.http.get<any>(`${this.API}/pokemon-species/${pokNumber}`).
-    pipe(
-      map((data: Pokemon) => {
-        return data;
-      }), catchError(error => {
-        return throwError('Something went wrong!');
-      })
-    );
+      pipe(
+        map((data: Pokemon) => {
+          return data;
+        }), catchError(error => {
+          return throwError('Something went wrong!');
+        })
+      );
   }
 
 }

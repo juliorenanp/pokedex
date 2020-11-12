@@ -1,6 +1,6 @@
-export class Pokemon{
+export class Pokemon {
     pokemonDescription: string;
     pokemonName: string;
     pokemonNumber: number;
-    pokemonType: string;    
+    pokemonType: string;
 }
