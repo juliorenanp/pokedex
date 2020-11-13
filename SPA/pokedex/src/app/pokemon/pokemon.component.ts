@@ -10,8 +10,6 @@ import { environment } from 'src/environments/environment';
 })
 export class PokemonComponent implements OnInit {
 
-  private readonly API = `${environment.API}`;
-
   pokemonNumber: number;
   pokemonName: string;
   pokemonType: string;
@@ -19,7 +17,7 @@ export class PokemonComponent implements OnInit {
   pokemonPhoto: string;
   pokemonUrl: string;
 
-  constructor(private service: PokemonService, private http: HttpClient) {
+  constructor(private service: PokemonService) {
   }
 
   ngOnInit(): void {
@@ -48,7 +46,6 @@ export class PokemonComponent implements OnInit {
     return `https://pokeapi.co/api/v2/pokemon-species/${id}/`
   }
 
-
   getPokemon(pokNumber: number) {
     this.service.getPokemon(pokNumber)
       .subscribe((data: any) => {
@@ -63,6 +60,5 @@ export class PokemonComponent implements OnInit {
       .subscribe((data: any) => {
         this.pokemonDescription = data.flavor_text_entries[0].flavor_text;
       });
-
   }
 }
